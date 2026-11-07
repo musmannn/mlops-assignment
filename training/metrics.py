@@ -103,7 +103,7 @@ def plot_curves(history: dict, path: Path, title: str, stage_boundary: int | Non
     epochs = np.arange(1, len(history["loss"]) + 1)
     best = int(np.argmin(history["val_loss"])) + 1
     fig, axes = plt.subplots(1, 2, figsize=(11, 4))
-    for ax, key in zip(axes, ["loss", "accuracy"]):
+    for ax, key in zip(axes, ["loss", "accuracy"], strict=True):
         ax.plot(epochs, history[key], label=f"train {key}")
         ax.plot(epochs, history[f"val_{key}"], label=f"val {key}")
         ax.axvline(best, color="red", ls="--", lw=1, label=f"best epoch {best}")

@@ -1,0 +1,24 @@
+# Keep the build context small and secrets out of images.
+.env
+.env.*
+!.env.example
+.git
+.dvc
+.venv
+data/
+models/
+mlruns/
+mlflow.db
+tuner_dir/
+reports/
+report/
+labs/
+notebooks/
+tests/
+deploy/
+**/__pycache__
+**/*.pyc
+.pytest_cache
+.ruff_cache
+*.keras
+*.zip

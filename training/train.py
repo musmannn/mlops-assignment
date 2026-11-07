@@ -113,7 +113,8 @@ def main() -> None:
     set_seeds(args.seed)
     augment = not args.no_augment
     splits = ROOT / params["data"]["splits_dir"]
-    run_name = args.run_name or f"{args.model}_{args.backbone if args.model == 'transfer' else 'scratch'}_{args.img_size}"
+    arch = args.backbone if args.model == "transfer" else "scratch"
+    run_name = args.run_name or f"{args.model}_{arch}_{args.img_size}"
     work = Path(tempfile.mkdtemp(prefix="vg_"))
     fig_dir = ROOT / "reports" / "figures" / run_name
     fig_dir.mkdir(parents=True, exist_ok=True)
@@ -230,8 +231,9 @@ def main() -> None:
         mlflow.log_artifact(str(model_file), "keras_file")
         mlflow.log_artifact(str(model_file.with_suffix(".json")), "keras_file")
         # MLflow model flavour -> lets the registry load it later with models:/<name>@champion
-        mlflow.tensorflow.log_model(model, name="model",
-                                    input_example=np.zeros((1, args.img_size, args.img_size, 3), np.float32))
+        info = mlflow.tensorflow.log_model(model, name="model",
+                                           input_example=np.zeros((1, args.img_size, args.img_size, 3), np.float32))
+        mlflow.set_tag("model_uri", info.model_uri)  # used by training.register
 
         # local copy for serving / error analysis
         out = ROOT / "models" / "runs" / run_name

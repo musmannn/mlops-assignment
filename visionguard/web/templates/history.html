@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block title %}History{% endblock %}
+{% block content %}
+<section class="card">
+  <h1>Prediction history</h1>
+  <p class="muted">Every analysed image leaves a permanent record: what was decided, when, by which model,
+    and how confidently. Images themselves are not stored, only their SHA-256 fingerprint.</p>
+  <div class="stats">
+    <div><span>{{ total }}</span>total requests</div>
+    {% for label, s in stats.items() %}
+      <div><span>{{ s.count }}</span>{{ DISPLAY[label] }} · avg {{ (s.avg_confidence*100)|round(1) }}%</div>
+    {% endfor %}
+  </div>
+  {% if rows %}
+  <div class="table-wrap">
+  <table>
+    <thead><tr>
+      <th>#</th><th>When (UTC)</th><th>File</th><th>Verdict</th><th>Confidence</th><th>P(AI)</th>
+      <th>Threshold</th><th>Model</th><th>Backend</th><th>Latency</th>
+    </tr></thead>
+    <tbody>
+    {% for row in rows %}
+      <tr>
+        <td>{{ row.id }}</td>
+        <td class="nowrap">{{ row.created_at.strftime('%Y-%m-%d %H:%M:%S') }}</td>
+        <td class="file" title="sha256 {{ row.image_sha256 }}">{{ row.filename }}<br><small class="muted">{{ row.image_width }}×{{ row.image_height }}</small></td>
+        <td><span class="pill {{ row.label }}">{{ DISPLAY[row.label] }}</span></td>
+        <td>{{ (row.confidence*100)|round(1) }}%</td>
+        <td>{{ '%.3f' % row.prob_ai }}</td>
+        <td>{{ '%.3f' % row.threshold }}</td>
+        <td class="nowrap">{{ row.model_name }}<br><small class="muted">v{{ row.model_version }}</small></td>
+        <td>{{ row.backend }}</td>
+        <td>{{ row.latency_ms }} ms</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  </div>
+  <p class="pager">
+    {% if page > 1 %}<a href="{{ url_for('history', page=page-1) }}">← newer</a>{% endif %}
+    page {{ page }} of {{ pages }}
+    {% if page < pages %}<a href="{{ url_for('history', page=page+1) }}">older →</a>{% endif %}
+  </p>
+  {% else %}
+    <p>No predictions yet. <a href="{{ url_for('index') }}">Upload an image</a>.</p>
+  {% endif %}
+</section>
+{% endblock %}

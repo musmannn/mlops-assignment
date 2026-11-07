@@ -1,0 +1,18 @@
+# Task 6.6 toy part: copy labs/ci-toy/* into a NEW throwaway GitHub repo and push.
+name: toy-ci
+
+on: [push]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.10", "3.11"]   # the same tests run once per version
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: pip install pytest
+      - run: pytest -v

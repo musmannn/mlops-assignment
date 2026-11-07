@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block title %}Upload{% endblock %}
+{% block content %}
+<section class="card">
+  <h1>Is this image AI-generated?</h1>
+  <p class="muted">Upload a picture and VisionGuard estimates whether a generative model or a human made it.
+    The image is analysed in memory and never stored.</p>
+
+  <form class="upload" action="{{ url_for('predict') }}" method="post" enctype="multipart/form-data">
+    <label class="drop" id="drop">
+      <input type="file" name="image" id="image" accept=".jpg,.jpeg,.png,.webp,.bmp,.gif,image/*" required>
+      <img id="preview" alt="" hidden>
+      <span id="drop-text"><strong>Choose an image</strong> or drag it here<br>
+        <small>JPG, PNG, WEBP, BMP or GIF · max {{ '%g' % max_mb }} MB</small></span>
+    </label>
+    <button type="submit" class="btn" id="submit">Analyse image</button>
+  </form>
+</section>
+
+<section class="card caveat">
+  <h2>Before you trust the verdict</h2>
+  <ul>
+    <li>The model was trained on about 1,000 web images (art, portraits, animals, landscapes). New generators,
+      heavy editing, screenshots or compression can fool it.</li>
+    <li>"Real" means made by people: photos <em>and</em> human paintings or illustrations.</li>
+    <li>Treat the result as a hint, not proof. Never accuse someone of faking an image based on this tool alone.</li>
+  </ul>
+</section>
+
+<script>
+  const input = document.getElementById('image'), img = document.getElementById('preview'),
+        txt = document.getElementById('drop-text'), drop = document.getElementById('drop');
+  input.addEventListener('change', () => {
+    const f = input.files[0]; if (!f) return;
+    img.src = URL.createObjectURL(f); img.hidden = false;
+    txt.innerHTML = '<strong>' + f.name.replace(/[<>&]/g, '') + '</strong><br><small>' + (f.size/1048576).toFixed(2) + ' MB</small>';
+  });
+  ['dragover','dragenter'].forEach(e => drop.addEventListener(e, ev => { ev.preventDefault(); drop.classList.add('hover'); }));
+  ['dragleave','drop'].forEach(e => drop.addEventListener(e, () => drop.classList.remove('hover')));
+  drop.addEventListener('drop', ev => { ev.preventDefault(); input.files = ev.dataTransfer.files; input.dispatchEvent(new Event('change')); });
+  document.querySelector('form').addEventListener('submit', () => {
+    const b = document.getElementById('submit'); b.disabled = true; b.textContent = 'Analysing…';
+  });
+</script>
+{% endblock %}

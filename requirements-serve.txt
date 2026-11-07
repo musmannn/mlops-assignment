@@ -1,0 +1,14 @@
+# Runtime dependencies of the web app and model API (Docker images).
+# tensorflow-cpu instead of tensorflow: no CUDA libraries -> much smaller image; a CPU is
+# plenty for one 224x224 MobileNetV2 forward pass (~50-100 ms).
+tensorflow-cpu==2.21.0
+keras==3.15.1
+numpy==2.4.6
+pillow==13.0.0
+flask==3.1.3
+werkzeug==3.1.9
+gunicorn==26.2.0
+sqlalchemy==2.1.8
+psycopg2-binary==2.9.13
+requests==2.34.2
+python-dotenv==1.2.4

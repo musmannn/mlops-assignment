@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}Result{% endblock %}
+{% block content %}
+{% set pct = (r.confidence * 100) | round(1) %}
+{% set unsure = r.confidence < 0.65 %}
+<section class="card result {{ r.label }}">
+  <div class="result-grid">
+    <img class="thumb" src="{{ preview }}" alt="uploaded image preview">
+    <div>
+      <p class="muted small">{{ up.filename }} · {{ up.width }}×{{ up.height }} · {{ up.fmt }}</p>
+      <h1 class="verdict">{{ DISPLAY[r.label] }}</h1>
+      <div class="meter"><span style="width: {{ pct }}%"></span></div>
+      <p><strong>{{ pct }}%</strong> confidence
+        <span class="muted">(P(AI) = {{ '%.3f' % r.prob_ai }}, decision threshold {{ '%.3f' % r.threshold }})</span></p>
+      {% if unsure %}
+        <p class="warn">The model is unsure about this one. The score is close to the threshold, so treat the verdict as a coin-flip.</p>
+      {% endif %}
+      <p class="caveat-inline">Honest caveat: this is a statistical guess from a small model trained on about 1,000 images.
+        It can be wrong, especially on new AI generators, edited photos or screenshots. Don't use it as proof.</p>
+      <p class="muted small">Model {{ r.model_name }} v{{ r.model_version }} · {{ r.latency_ms }} ms · logged as record #{{ row_id }}</p>
+      <a class="btn" href="{{ url_for('index') }}">Analyse another</a>
+      <a class="btn secondary" href="{{ url_for('history') }}">View history</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

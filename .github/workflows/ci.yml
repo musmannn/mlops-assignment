@@ -1,0 +1,40 @@
+# VisionGuard CI (Task 6.6): lint + tests + Docker build on every push and PR.
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: requirements-ci.txt
+      - name: Install dependencies
+        run: pip install -r requirements-ci.txt
+      - name: Lint (ruff)
+        run: ruff check .
+      - name: Tests (pytest)
+        run: pytest -v
+
+  docker:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: docker/setup-buildx-action@v3
+      - name: Build web image
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          push: false
+          tags: 24l-0672_a2_ops-web:ci
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+      # Secrets (e.g. a registry token) would come from Settings -> Secrets and variables ->
+      # Actions and be referenced as ${{ secrets.NAME }}; they are never written in this file.

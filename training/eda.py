@@ -39,12 +39,13 @@ def sample_grid(df: pd.DataFrame, n: int = 8, seed: int = 42) -> None:
 def histograms(df: pd.DataFrame) -> None:
     cols = [("width", "Width (px)"), ("height", "Height (px)"), ("file_size_kb", "File size (KB)")]
     fig, axes = plt.subplots(1, 3, figsize=(16, 4.2))
-    for ax, (col, title) in zip(axes, cols):
+    for ax, (col, title) in zip(axes, cols, strict=True):
         upper = df[col].quantile(0.99)  # clip the long tail so the bulk is visible
         bins = np.linspace(0, upper, 40)
         for cls, color in [("ai", "#d1495b"), ("real", "#2e86ab")]:
-            vals = df[df["class"] == cls][col].clip(upper=upper)
-            ax.hist(vals, bins=bins, alpha=0.55, label=f"{cls} (median {df[df['class']==cls][col].median():.0f})", color=color)
+            col_vals = df[df["class"] == cls][col]
+            ax.hist(col_vals.clip(upper=upper), bins=bins, alpha=0.55, color=color,
+                    label=f"{cls} (median {col_vals.median():.0f})")
         ax.set_title(title + " - clipped at 99th percentile")
         ax.set_xlabel(title)
         ax.set_ylabel("Images")

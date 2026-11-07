@@ -1,0 +1,18 @@
+[project]
+name = "visionguard"
+version = "1.0.0"
+description = "24L-0672_A2_Ops - AI vs real image classifier with MLOps"
+requires-python = ">=3.11"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+
+[tool.ruff]
+line-length = 120
+target-version = "py311"
+extend-exclude = ["labs/ci-toy", "notebooks"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP"]
+ignore = ["E402", "B008"]

@@ -1,0 +1,6 @@
+# Used only by Dockerfile.naive (the "before" image). Excludes just what would make the
+# build impractically slow; everything else (tests, reports, labs...) gets copied in.
+.venv
+.git
+data/raw
+.env
