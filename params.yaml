@@ -1,0 +1,33 @@
+# Central experiment settings. Scripts read defaults from here; CLI flags override them.
+project: 24L-0672_A2_Ops
+seed: 42
+
+data:
+  raw_dir: data/raw            # tracked by DVC, never by Git
+  splits_dir: data/splits      # train.csv / val.csv / test.csv (path,label)
+  audit_csv: reports/audit.csv
+  val_frac: 0.15
+  test_frac: 0.15
+
+labels:                        # sigmoid output = P(class 1)
+  0: real
+  1: ai
+
+train:
+  img_size: 224
+  batch_size: 32
+  epochs: 30
+  patience: 6
+  lr: 0.001                    # stage 1 / baseline learning rate
+  fine_tune_lr: 0.00001        # stage 2 (unfrozen last block)
+  fine_tune_epochs: 15
+  dropout: 0.3
+  augment: true
+  backbone: mobilenetv2
+  unfreeze_layers: 0           # 0 = auto: unfreeze the last block only
+
+eval:
+  max_fpr_real: 0.10           # threshold rule: at most 10% of real val photos called fake
+
+registry:
+  model_name: 24L-0672_A2_Ops_visionguard

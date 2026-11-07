@@ -1,0 +1,28 @@
+== Counts per class ==
+       files  readable  corrupt  exact_duplicates
+class                                            
+ai       539       539        0                 1
+real     436       436        0                 0
+
+== Width / height / file size (readable files) ==
+      width               height              file_size_kb                
+        min  median   max    min median   max          min  median     max
+class                                                                     
+ai      225  1024.0  6000    135  800.0  4001         11.5  195.10  5494.3
+real    183   920.0  8495    158  720.0  7091         11.0  141.45  9956.4
+
+== Colour modes ==
+mode   L   P  RGB  RGBA
+class                  
+ai     1  14  489    35
+real   6   9  407    14
+
+== Formats ==
+format  JPEG  PNG
+class            
+ai       429  110
+real     403   33
+
+Corrupt/unreadable files: 0
+Exact duplicate files (extra copies): 1
+Duplicates whose copies sit in BOTH classes: 0

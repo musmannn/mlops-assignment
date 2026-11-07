@@ -1,0 +1,26 @@
+# secrets - NEVER commit
+.env
+.dvc/config.local
+
+# python / tooling
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+
+# data & models live in DVC / MLflow, not Git
+/data/raw
+/models/runs/
+/models/*.keras
+!/models/.gitkeep
+mlruns/
+mlflow.db
+mlartifacts/
+tuner_dir/
+*.keras
+
+# local runtime
+instance/
+*.sqlite3
+*.db
