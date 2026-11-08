@@ -47,26 +47,32 @@ def load_meta(model_path: str | Path) -> dict:
     return {}
 
 
-class Predictor:
-    def __init__(self, model_path: str | Path, threshold: float | None = None):
-        import keras  # imported lazily so the web app can run without TF in "remote" mode
+class _BasePredictor:
+    """Shared logic: metadata, preprocessing, thresholding. Subclasses implement `_prob_ai`."""
 
+    def __init__(self, model_path: str | Path, threshold: float | None = None):
         self.model_path = Path(model_path)
         if not self.model_path.exists():
             raise FileNotFoundError(f"model file not found: {self.model_path}")
-        self.model = keras.models.load_model(self.model_path, compile=False)
         meta = load_meta(self.model_path)
-        self.img_size = int(meta.get("img_size", self.model.input_shape[1]))
+        self.img_size = int(meta.get("img_size", 224))
         self.threshold = float(threshold if threshold is not None else meta.get("threshold", 0.5))
         self.model_name = meta.get("model_name", self.model_path.stem)
         self.model_version = str(meta.get("model_version", "local"))
-        # Warm-up: the first call builds the TF graph; do it now, not on the first user.
-        self.model.predict(np.zeros((1, self.img_size, self.img_size, 3), np.float32), verbose=0)
+        self._load()
+        # Warm-up: the first call builds/optimises the graph; do it now, not on the first user.
+        self._prob_ai(np.zeros((1, self.img_size, self.img_size, 3), np.float32))
+
+    def _load(self) -> None:
+        raise NotImplementedError
+
+    def _prob_ai(self, x: np.ndarray) -> float:
+        raise NotImplementedError
 
     def predict_bytes(self, data: bytes) -> Prediction:
         t0 = time.perf_counter()
         x = load_rgb_letterboxed(data, self.img_size)[None, ...]
-        prob_ai = float(self.model.predict(x, verbose=0)[0][0])
+        prob_ai = self._prob_ai(x)
         label = "ai" if prob_ai >= self.threshold else "real"
         confidence = prob_ai if label == "ai" else 1.0 - prob_ai
         return Prediction(
@@ -80,18 +86,47 @@ class Predictor:
         )
 
 
-def predictor_from_env() -> Predictor:
+class Predictor(_BasePredictor):
+    """Keras/TensorFlow backend (.keras file) - used by the Docker web app."""
+
+    def _load(self) -> None:
+        import keras  # imported lazily so the web app can run without TF in "remote" mode
+
+        self.model = keras.models.load_model(self.model_path, compile=False)
+
+    def _prob_ai(self, x: np.ndarray) -> float:
+        return float(self.model.predict(x, verbose=0)[0][0])
+
+
+class OnnxPredictor(_BasePredictor):
+    """onnxruntime backend (.onnx file) - used by the serverless model API on Vercel.
+
+    Same preprocessing and threshold as the Keras model; numerical equivalence is checked by
+    training/export_onnx.py (max |diff| ~1e-5, no label flips on the test set).
+    """
+
+    def _load(self) -> None:
+        import onnxruntime as ort
+
+        self.session = ort.InferenceSession(str(self.model_path), providers=["CPUExecutionProvider"])
+        self.input_name = self.session.get_inputs()[0].name
+
+    def _prob_ai(self, x: np.ndarray) -> float:
+        return float(self.session.run(None, {self.input_name: x.astype(np.float32)})[0].ravel()[0])
+
+
+def predictor_from_env() -> _BasePredictor:
     threshold = os.environ.get("THRESHOLD")
-    return Predictor(
-        os.environ.get("MODEL_PATH", "models/champion.keras"),
-        float(threshold) if threshold else None,
-    )
+    path = os.environ.get("MODEL_PATH", "models/champion.keras")
+    cls = OnnxPredictor if path.endswith(".onnx") else Predictor
+    return cls(path, float(threshold) if threshold else None)
 
 
 if __name__ == "__main__":  # console demo for the report: python -m visionguard.inference img1 img2
     import sys
 
     p = predictor_from_env()
+    print(f"backend: {type(p).__name__}")
     print(f"loaded {p.model_name} v{p.model_version} size={p.img_size} threshold={p.threshold}")
     for path in sys.argv[1:]:
         r = p.predict_bytes(Path(path).read_bytes())

@@ -1,0 +1,36 @@
+{
+  "stage1_trainable": [
+    "prob_ai"
+  ],
+  "stage2_unfrozen_base_layers": [
+    "block_13_expand",
+    "block_13_depthwise",
+    "block_13_project",
+    "block_14_expand",
+    "block_14_depthwise",
+    "block_14_project",
+    "block_15_expand",
+    "block_15_depthwise",
+    "block_15_project",
+    "block_16_expand",
+    "block_16_depthwise",
+    "block_16_project",
+    "Conv_1"
+  ],
+  "stage2_trainable": [
+    "mobilenetv2_1.00_224/block_13_expand",
+    "mobilenetv2_1.00_224/block_13_depthwise",
+    "mobilenetv2_1.00_224/block_13_project",
+    "mobilenetv2_1.00_224/block_14_expand",
+    "mobilenetv2_1.00_224/block_14_depthwise",
+    "mobilenetv2_1.00_224/block_14_project",
+    "mobilenetv2_1.00_224/block_15_expand",
+    "mobilenetv2_1.00_224/block_15_depthwise",
+    "mobilenetv2_1.00_224/block_15_project",
+    "mobilenetv2_1.00_224/block_16_expand",
+    "mobilenetv2_1.00_224/block_16_depthwise",
+    "mobilenetv2_1.00_224/block_16_project",
+    "mobilenetv2_1.00_224/Conv_1",
+    "prob_ai"
+  ]
+}

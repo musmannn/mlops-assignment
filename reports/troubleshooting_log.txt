@@ -1,0 +1,32 @@
+### 2026-11-08 16:12:24 user=usman project=24L-0672_A2_Ops
+
+### FAULT 1: wrong database password
+$ POSTGRES_PASSWORD=wrong-password docker compose up -d --force-recreate web
+ Container 24l-0672_a2_ops-web-1 Starting 
+ Container 24l-0672_a2_ops-web-1 Started 
+$ docker compose ps web
+SERVICE   STATUS
+web       Restarting (3) Less than a second ago
+$ docker compose logs --tail 40 web | grep -iE "error|fatal|failed"
+web-1  | sqlalchemy.exc.OperationalError: (psycopg2.OperationalError) connection to server at "db" (172.19.0.2), port 5432 failed: FATAL:  password authentication failed for user "visionguard"
+web-1  | (Background on this error at: https://sqlalche.me/e/21/e3q8)
+web-1  | (psycopg2.OperationalError) connection to server at "db" (172.19.0.2), port 5432 failed: FATAL:  password authentication failed for user "visionguard"
+web-1  | (Background on this error at: https://sqlalche.me/e/21/e3q8)
+web-1  | [2026-11-08 11:12:42 +0000] [1] [ERROR] Worker (pid:7) exited with code 3.
+web-1  | [2026-11-08 11:12:42 +0000] [1] [ERROR] Shutting down: Master
+
+# diagnosis: psycopg2 OperationalError 'password authentication failed for user visionguard' -> web uses a password the DB does not accept
+$ docker compose up -d --force-recreate web   # fix: back to the password from .env
+ Container 24l-0672_a2_ops-web-1 Started 
+SERVICE   STATUS
+web       Up 6 seconds (healthy)
+
+### FAULT 2: missing model file
+$ MODEL_FILE_OVERRIDE: docker compose run with MODEL_PATH=/app/models/champion_v3.keras
+    raise FileNotFoundError(f"model file not found: {self.model_path}")
+FileNotFoundError: model file not found: /app/models/champion_v3.keras
+[2026-11-08 11:13:00 +0000] [1] [ERROR] Shutting down: Master
+[2026-11-08 11:13:00 +0000] [1] [ERROR] Reason: Worker failed to boot.
+# diagnosis: FileNotFoundError: model file not found -> MODEL_PATH points at a file that is not in the mounted ./models folder
+$ ls models/   # fix: use the existing champion.keras (or copy the right file into ./models)
+models/champion.keras

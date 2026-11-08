@@ -1,0 +1,4 @@
+model,threshold,accuracy,precision,recall,f1,roc_auc,real_called_fake,fake_called_real,tp,tn
+cnn_baseline,0.624,0.551,0.7778,0.2593,0.3889,0.6354,6.0,60.0,21.0,60.0
+mnv2_224,0.617,0.7347,0.8387,0.642,0.7273,0.8565,10.0,29.0,52.0,56.0
+mnv2_224_noaug,0.637,0.7891,0.8378,0.7654,0.8,0.8661,12.0,19.0,62.0,54.0

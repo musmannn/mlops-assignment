@@ -1,0 +1,11 @@
+path,label,pred,prob_ai
+data/raw/AiArtData/AiArtData/240201-airec-main-ksp-5625e8.jpg,1,0,0.0020192356
+data/raw/RealArt/RealArt/02-still-for-america-room-loop-superJumbo.jpg,0,1,0.96893287
+data/raw/RealArt/RealArt/images108.jpg,0,1,0.948898
+data/raw/AiArtData/AiArtData/nvidia-ai-scribbles-realistic-landscapes.png,1,0,0.056204256
+data/raw/RealArt/RealArt/images70.jpg,0,1,0.9361412
+data/raw/RealArt/RealArt/_MG_5812.jpg,0,1,0.91163784
+data/raw/AiArtData/AiArtData/tiger4.jpg,1,0,0.09882402
+data/raw/AiArtData/AiArtData/jesus-dunking-scaled.jpg,1,0,0.17070219
+data/raw/RealArt/RealArt/hqdefault.jpg,0,1,0.8175718
+data/raw/AiArtData/AiArtData/3e9bc32a-1d77-4f0a-b0df-199c80060385-1024x1024.jpg,1,0,0.18509966

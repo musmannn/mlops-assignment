@@ -1,0 +1,16 @@
+run,what changed,model,backbone,img,aug,lr,unfreeze,fine_tune,val_auc,val_recall@thr,val_f1@thr,test_acc,test_f1,test_auc,test_FP,best_ep,train_s
+mnv2_224_noaug,augmentation_off,transfer,mobilenetv2,224,False,0.001,0,True,0.8693,0.7284,0.8082,0.7891,0.8,0.8661,12.0,30.0,748.8
+colab_mnv2_224,reference_transfer_run,transfer,mobilenetv2,224,True,0.001,0,True,0.8503,0.6914,0.7832,0.7347,0.731,0.8554,11.0,27.0,395.1
+mnv2_224,reference_transfer_run,transfer,mobilenetv2,224,True,0.001,0,True,0.8524,0.6914,0.7832,0.7347,0.7273,0.8565,10.0,31.0,641.5
+colab_mnv2_224_frozen,no_fine_tuning_stage,transfer,mobilenetv2,224,True,0.001,0,False,0.8388,0.679,0.7746,0.7279,0.7297,0.8374,13.0,15.0,236.0
+colab_mnv2_224_lr3e-4,stage1_lr_0.0003,transfer,mobilenetv2,224,True,0.0003,0,True,0.8519,0.679,0.7801,0.7211,0.7007,0.8434,8.0,32.0,332.0
+mnv2_224_unfreeze40,unfreeze_last_40_layers,transfer,mobilenetv2,224,True,0.001,40,True,0.8634,0.679,0.7746,0.7279,0.7101,0.8779,8.0,28.0,358.3
+mnv2_224_lr3e-4,stage1_lr_0.0003,transfer,mobilenetv2,224,True,0.0003,0,True,0.8552,0.6667,0.777,0.7007,0.6857,0.8425,11.0,32.0,517.3
+colab_mnv2_224_noaug,augmentation_off,transfer,mobilenetv2,224,False,0.001,0,True,0.862,0.6543,0.7681,0.7279,0.7143,0.8487,9.0,27.0,165.9
+mnv2_224_frozen,no_fine_tuning_stage,transfer,mobilenetv2,224,True,0.001,0,False,0.8306,0.6296,0.7391,0.7143,0.7042,0.8285,11.0,15.0,410.9
+mnv2_160,image_size_160,transfer,mobilenetv2,160,True,0.001,0,True,0.8472,0.5802,0.7015,0.7755,0.7724,0.8584,8.0,32.0,193.1
+effb0_224,backbone_efficientnetb0,transfer,efficientnetb0,224,True,0.001,0,True,0.8574,0.5062,0.6406,0.7619,0.7368,0.9052,3.0,30.0,591.9
+cnn_autolog,same_as_cnn_baseline_but_mlflow_autolog,cnn,none,224,True,,,,0.8116,0.4815,0.624,0.6327,0.5424,0.786,5.0,20.0,1157.0
+colab_cnn_baseline,baseline_cnn_from_scratch,cnn,none,224,True,0.001,,,0.7953,0.3951,0.5378,0.6259,0.5378,0.7836,6.0,19.0,220.7
+colab_cnn_autolog,same_as_cnn_baseline_but_mlflow_autolog,cnn,none,224,True,,,,0.7767,0.3704,0.5128,0.5986,0.4957,0.7316,7.0,10.0,196.5
+cnn_baseline,baseline_cnn_from_scratch,cnn,none,224,True,0.001,,,0.6984,0.284,0.4182,0.551,0.3889,0.6354,6.0,6.0,753.8

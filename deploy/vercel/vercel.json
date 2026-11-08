@@ -1,0 +1,11 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "functions": {
+    "api/index.py": {
+      "maxDuration": 30,
+      "memory": 1024,
+      "includeFiles": "{models/**,visionguard/**}"
+    }
+  },
+  "rewrites": [{ "source": "/(.*)", "destination": "/api/index?__path=/$1" }]
+}

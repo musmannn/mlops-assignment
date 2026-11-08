@@ -1,0 +1,10 @@
+{
+  "images": 147,
+  "max_abs_diff": 8.13603401184082e-06,
+  "mean_abs_diff": 1.2659303365580854e-06,
+  "label_flips_at_threshold": 0,
+  "threshold": 0.6370762586593628,
+  "keras_file_mb": 16.7,
+  "onnx_file_mb": 8.9,
+  "onnxruntime": "1.31.1"
+}

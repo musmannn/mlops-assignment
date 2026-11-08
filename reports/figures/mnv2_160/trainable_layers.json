@@ -1,0 +1,18 @@
+{
+  "stage1_trainable": [
+    "prob_ai"
+  ],
+  "stage2_unfrozen_base_layers": [
+    "block_16_expand",
+    "block_16_depthwise",
+    "block_16_project",
+    "Conv_1"
+  ],
+  "stage2_trainable": [
+    "mobilenetv2_1.00_160/block_16_expand",
+    "mobilenetv2_1.00_160/block_16_depthwise",
+    "mobilenetv2_1.00_160/block_16_project",
+    "mobilenetv2_1.00_160/Conv_1",
+    "prob_ai"
+  ]
+}

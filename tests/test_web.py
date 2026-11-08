@@ -76,6 +76,18 @@ def test_health(client):
     assert body["debug"] is False
 
 
+def test_remote_backend_shrinks_large_uploads():
+    from visionguard.web.backends import RemoteBackend
+
+    noisy = Image.effect_noise((3000, 2000), 100).convert("RGB")  # noise compresses badly -> big file
+    buf = io.BytesIO()
+    noisy.save(buf, "PNG")
+    assert len(buf.getvalue()) > RemoteBackend.MAX_SEND_BYTES
+    small, name = RemoteBackend.shrink(buf.getvalue(), "huge.png")
+    assert len(small) < RemoteBackend.MAX_SEND_BYTES and name == "huge.jpg"
+    assert max(Image.open(io.BytesIO(small)).size) == 2048
+
+
 def test_nothing_written_to_disk(client, tmp_path):
     before = set(tmp_path.rglob("*"))
     upload(client, png_bytes(), "x.png")

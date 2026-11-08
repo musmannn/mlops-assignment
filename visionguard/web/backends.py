@@ -44,8 +44,29 @@ class RemoteBackend:
         self.session.headers["X-API-Key"] = api_key
         self.timeout = timeout
 
+    # Vercel rejects request bodies over 4.5 MB; stay safely below with multipart overhead.
+    MAX_SEND_BYTES = 4_000_000
+
+    @staticmethod
+    def shrink(data: bytes, filename: str, long_side: int = 2048) -> tuple[bytes, str]:
+        """Downscale + re-encode an oversized upload. The model only sees 224x224, so this
+        loses nothing it uses; JPEG quality 92 keeps compression artefacts minimal."""
+        import io
+
+        from PIL import Image
+
+        from visionguard.preprocess import to_rgb
+
+        img = to_rgb(Image.open(io.BytesIO(data)))
+        img.thumbnail((long_side, long_side), Image.Resampling.LANCZOS)
+        buf = io.BytesIO()
+        img.save(buf, "JPEG", quality=92)
+        return buf.getvalue(), filename.rsplit(".", 1)[0] + ".jpg"
+
     def predict(self, data: bytes, filename: str) -> dict:
         t0 = time.perf_counter()
+        if len(data) > self.MAX_SEND_BYTES:
+            data, filename = self.shrink(data, filename)
         try:
             r = self.session.post(f"{self.url}/predict", files={"image": (filename, data)}, timeout=self.timeout)
         except requests.RequestException as exc:

@@ -1,5 +1,3 @@
-Downloading data from https://storage.googleapis.com/tensorflow/keras-applications/mobilenet_v2/mobilenet_v2_weights_tf_dim_ordering_tf_kernels_1.0_160_no_top.h5
-[1m      0/9406464[0m [37m━━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 0s/step[1m  32768/9406464[0m [37m━━━━━━━━━━━━━━━━━━━━[0m [1m14s[0m 2us/step[1m  81920/9406464[0m [37m━━━━━━━━━━━━━━━━━━━━[0m [1m11s[0m 1us/step[1m 196608/9406464[0m [37m━━━━━━━━━━━━━━━━━━━━[0m [1m7s[0m 1us/step [1m 442368/9406464[0m [37m━━━━━━━━━━━━━━━━━━━━[0m [1m4s[0m 0us/step[1m 991232/9406464[0m [32m━━[0m[37m━━━━━━━━━━━━━━━━━━[0m [1m2s[0m 0us/step[1m1695744/9406464[0m [32m━━━[0m[37m━━━━━━━━━━━━━━━━━[0m [1m1s[0m 0us/step[1m2859008/9406464[0m [32m━━━━━━[0m[37m━━━━━━━━━━━━━━[0m [1m0s[0m 0us/step[1m3563520/9406464[0m [32m━━━━━━━[0m[37m━━━━━━━━━━━━━[0m [1m0s[0m 0us/step[1m6955008/9406464[0m [32m━━━━━━━━━━━━━━[0m[37m━━━━━━[0m [1m0s[0m 0us/step[1m9406464/9406464[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m1s[0m 0us/step
 
 Search: Running Trial #1
 
@@ -8,3 +6,296 @@ Value             |Best Value So Far |Hyperparameter
 0.1               |0.1               |dropout
 10                |10                |unfrozen_layers
 
+Epoch 1/8
+22/22 - 44s - 2s/step - accuracy: 0.5947 - auc: 0.6072 - loss: 0.7249 - precision: 0.6232 - recall: 0.6729 - val_accuracy: 0.6575 - val_auc: 0.7701 - val_loss: 0.5906 - val_precision: 0.6396 - val_recall: 0.8765
+Epoch 2/8
+22/22 - 13s - 573ms/step - accuracy: 0.7812 - auc: 0.8658 - loss: 0.4669 - precision: 0.7979 - recall: 0.8085 - val_accuracy: 0.7808 - val_auc: 0.8323 - val_loss: 0.5117 - val_precision: 0.7753 - val_recall: 0.8519
+Epoch 3/8
+22/22 - 14s - 618ms/step - accuracy: 0.8120 - auc: 0.9002 - loss: 0.4000 - precision: 0.8179 - recall: 0.8484 - val_accuracy: 0.7877 - val_auc: 0.8593 - val_loss: 0.4745 - val_precision: 0.8205 - val_recall: 0.7901
+Epoch 4/8
+22/22 - 12s - 552ms/step - accuracy: 0.8590 - auc: 0.9315 - loss: 0.3582 - precision: 0.8933 - recall: 0.8457 - val_accuracy: 0.7671 - val_auc: 0.8543 - val_loss: 0.4868 - val_precision: 0.7474 - val_recall: 0.8765
+Epoch 5/8
+22/22 - 13s - 576ms/step - accuracy: 0.8752 - auc: 0.9478 - loss: 0.3085 - precision: 0.8859 - recall: 0.8883 - val_accuracy: 0.7055 - val_auc: 0.8500 - val_loss: 0.5649 - val_precision: 0.6727 - val_recall: 0.9136
+Epoch 6/8
+22/22 - 13s - 580ms/step - accuracy: 0.8590 - auc: 0.9416 - loss: 0.3129 - precision: 0.8684 - recall: 0.8777 - val_accuracy: 0.7945 - val_auc: 0.8604 - val_loss: 0.4723 - val_precision: 0.7802 - val_recall: 0.8765
+Epoch 7/8
+22/22 - 13s - 603ms/step - accuracy: 0.8855 - auc: 0.9540 - loss: 0.2940 - precision: 0.8860 - recall: 0.9096 - val_accuracy: 0.8082 - val_auc: 0.8668 - val_loss: 0.4747 - val_precision: 0.8841 - val_recall: 0.7531
+Epoch 8/8
+22/22 - 14s - 634ms/step - accuracy: 0.9339 - auc: 0.9734 - loss: 0.2466 - precision: 0.9321 - recall: 0.9495 - val_accuracy: 0.7740 - val_auc: 0.8706 - val_loss: 0.4510 - val_precision: 0.7857 - val_recall: 0.8148
+
+Trial 1 Complete [00h 02m 19s]
+val_auc: 0.8705602884292603
+
+Best val_auc So Far: 0.8705602884292603
+Total elapsed time: 00h 02m 19s
+
+Search: Running Trial #2
+
+Value             |Best Value So Far |Hyperparameter
+0.0003            |0.0001            |lr
+0.5               |0.1               |dropout
+10                |10                |unfrozen_layers
+
+Epoch 1/8
+22/22 - 19s - 861ms/step - accuracy: 0.6050 - auc: 0.6232 - loss: 0.7560 - precision: 0.6308 - recall: 0.6862 - val_accuracy: 0.7329 - val_auc: 0.8032 - val_loss: 0.5617 - val_precision: 0.8088 - val_recall: 0.6790
+Epoch 2/8
+22/22 - 12s - 525ms/step - accuracy: 0.7034 - auc: 0.7961 - loss: 0.5411 - precision: 0.7164 - recall: 0.7660 - val_accuracy: 0.7740 - val_auc: 0.8279 - val_loss: 0.5168 - val_precision: 0.7791 - val_recall: 0.8272
+Epoch 3/8
+22/22 - 12s - 525ms/step - accuracy: 0.7474 - auc: 0.8397 - loss: 0.4845 - precision: 0.7563 - recall: 0.8005 - val_accuracy: 0.7877 - val_auc: 0.8473 - val_loss: 0.4929 - val_precision: 0.8571 - val_recall: 0.7407
+Epoch 4/8
+22/22 - 15s - 661ms/step - accuracy: 0.7885 - auc: 0.8699 - loss: 0.4458 - precision: 0.7990 - recall: 0.8245 - val_accuracy: 0.7808 - val_auc: 0.8740 - val_loss: 0.4727 - val_precision: 0.8551 - val_recall: 0.7284
+Epoch 5/8
+22/22 - 16s - 709ms/step - accuracy: 0.8414 - auc: 0.9242 - loss: 0.3570 - precision: 0.8602 - recall: 0.8511 - val_accuracy: 0.8014 - val_auc: 0.8752 - val_loss: 0.4389 - val_precision: 0.8333 - val_recall: 0.8025
+Epoch 6/8
+22/22 - 12s - 525ms/step - accuracy: 0.8517 - auc: 0.9311 - loss: 0.3349 - precision: 0.8609 - recall: 0.8723 - val_accuracy: 0.7808 - val_auc: 0.8632 - val_loss: 0.4808 - val_precision: 0.8769 - val_recall: 0.7037
+Epoch 7/8
+22/22 - 16s - 733ms/step - accuracy: 0.8634 - auc: 0.9402 - loss: 0.3156 - precision: 0.8835 - recall: 0.8670 - val_accuracy: 0.7397 - val_auc: 0.8638 - val_loss: 0.5724 - val_precision: 0.7087 - val_recall: 0.9012
+Epoch 8/8
+22/22 - 16s - 738ms/step - accuracy: 0.8517 - auc: 0.9249 - loss: 0.3496 - precision: 0.8571 - recall: 0.8777 - val_accuracy: 0.7466 - val_auc: 0.8903 - val_loss: 0.5108 - val_precision: 0.9400 - val_recall: 0.5802
+
+Trial 2 Complete [00h 01m 59s]
+val_auc: 0.8903133869171143
+
+Best val_auc So Far: 0.8903133869171143
+Total elapsed time: 00h 04m 17s
+
+Search: Running Trial #3
+
+Value             |Best Value So Far |Hyperparameter
+0.001             |0.0003            |lr
+0.5               |0.5               |dropout
+20                |10                |unfrozen_layers
+
+Epoch 1/8
+22/22 - 29s - 1s/step - accuracy: 0.5242 - auc: 0.4955 - loss: 1.1172 - precision: 0.5610 - recall: 0.6356 - val_accuracy: 0.5548 - val_auc: 0.5926 - val_loss: 0.6948 - val_precision: 0.5548 - val_recall: 1.0000
+Epoch 2/8
+22/22 - 13s - 592ms/step - accuracy: 0.4934 - auc: 0.4888 - loss: 0.8656 - precision: 0.5444 - recall: 0.5053 - val_accuracy: 0.5548 - val_auc: 0.5000 - val_loss: 0.6878 - val_precision: 0.5548 - val_recall: 1.0000
+Epoch 3/8
+22/22 - 14s - 630ms/step - accuracy: 0.5360 - auc: 0.5131 - loss: 0.8576 - precision: 0.5676 - recall: 0.6702 - val_accuracy: 0.4452 - val_auc: 0.6387 - val_loss: 0.8368 - val_precision: 0.0000e+00 - val_recall: 0.0000e+00
+Epoch 4/8
+22/22 - 13s - 596ms/step - accuracy: 0.5154 - auc: 0.5176 - loss: 0.9556 - precision: 0.5567 - recall: 0.6011 - val_accuracy: 0.4452 - val_auc: 0.5000 - val_loss: 0.7141 - val_precision: 0.0000e+00 - val_recall: 0.0000e+00
+Epoch 5/8
+22/22 - 12s - 524ms/step - accuracy: 0.5051 - auc: 0.4982 - loss: 0.9422 - precision: 0.5489 - recall: 0.5824 - val_accuracy: 0.5548 - val_auc: 0.5000 - val_loss: 0.6871 - val_precision: 0.5548 - val_recall: 1.0000
+Epoch 6/8
+22/22 - 11s - 491ms/step - accuracy: 0.4831 - auc: 0.4720 - loss: 0.9101 - precision: 0.5331 - recall: 0.5133 - val_accuracy: 0.5548 - val_auc: 0.5000 - val_loss: 0.7208 - val_precision: 0.5548 - val_recall: 1.0000
+Epoch 7/8
+22/22 - 11s - 509ms/step - accuracy: 0.5316 - auc: 0.4994 - loss: 0.8561 - precision: 0.5697 - recall: 0.6197 - val_accuracy: 0.5548 - val_auc: 0.5000 - val_loss: 0.7032 - val_precision: 0.5548 - val_recall: 1.0000
+Epoch 8/8
+22/22 - 11s - 515ms/step - accuracy: 0.4949 - auc: 0.4929 - loss: 0.7991 - precision: 0.5394 - recall: 0.5824 - val_accuracy: 0.5548 - val_auc: 0.5000 - val_loss: 0.7059 - val_precision: 0.5548 - val_recall: 1.0000
+
+Trial 3 Complete [00h 01m 57s]
+val_auc: 0.6387465000152588
+
+Best val_auc So Far: 0.8903133869171143
+Total elapsed time: 00h 06m 14s
+
+Search: Running Trial #4
+
+Value             |Best Value So Far |Hyperparameter
+3e-05             |0.0003            |lr
+0.1               |0.5               |dropout
+40                |10                |unfrozen_layers
+
+Epoch 1/8
+22/22 - 20s - 904ms/step - accuracy: 0.5712 - auc: 0.5972 - loss: 0.7307 - precision: 0.5968 - recall: 0.6888 - val_accuracy: 0.5890 - val_auc: 0.7096 - val_loss: 0.6452 - val_precision: 0.6981 - val_recall: 0.4568
+Epoch 2/8
+22/22 - 13s - 569ms/step - accuracy: 0.7137 - auc: 0.7854 - loss: 0.5602 - precision: 0.7315 - recall: 0.7606 - val_accuracy: 0.7123 - val_auc: 0.7762 - val_loss: 0.5628 - val_precision: 0.7010 - val_recall: 0.8395
+Epoch 3/8
+22/22 - 13s - 575ms/step - accuracy: 0.7812 - auc: 0.8606 - loss: 0.4758 - precision: 0.7888 - recall: 0.8245 - val_accuracy: 0.7397 - val_auc: 0.8136 - val_loss: 0.5338 - val_precision: 0.7129 - val_recall: 0.8889
+Epoch 4/8
+22/22 - 12s - 553ms/step - accuracy: 0.8135 - auc: 0.8979 - loss: 0.4113 - precision: 0.8356 - recall: 0.8245 - val_accuracy: 0.7877 - val_auc: 0.8382 - val_loss: 0.4953 - val_precision: 0.7717 - val_recall: 0.8765
+Epoch 5/8
+22/22 - 12s - 537ms/step - accuracy: 0.8517 - auc: 0.9305 - loss: 0.3524 - precision: 0.8481 - recall: 0.8910 - val_accuracy: 0.8014 - val_auc: 0.8569 - val_loss: 0.4984 - val_precision: 0.7600 - val_recall: 0.9383
+Epoch 6/8
+22/22 - 12s - 529ms/step - accuracy: 0.8811 - auc: 0.9519 - loss: 0.3047 - precision: 0.8912 - recall: 0.8936 - val_accuracy: 0.7534 - val_auc: 0.8485 - val_loss: 0.5562 - val_precision: 0.7103 - val_recall: 0.9383
+Epoch 7/8
+22/22 - 12s - 555ms/step - accuracy: 0.8855 - auc: 0.9594 - loss: 0.2790 - precision: 0.8860 - recall: 0.9096 - val_accuracy: 0.7945 - val_auc: 0.8612 - val_loss: 0.4744 - val_precision: 0.8493 - val_recall: 0.7654
+Epoch 8/8
+22/22 - 19s - 858ms/step - accuracy: 0.9104 - auc: 0.9699 - loss: 0.2450 - precision: 0.9245 - recall: 0.9122 - val_accuracy: 0.8219 - val_auc: 0.8695 - val_loss: 0.4613 - val_precision: 0.8090 - val_recall: 0.8889
+
+Trial 4 Complete [00h 01m 54s]
+val_auc: 0.8695157170295715
+
+Best val_auc So Far: 0.8903133869171143
+Total elapsed time: 00h 08m 09s
+
+Search: Running Trial #5
+
+Value             |Best Value So Far |Hyperparameter
+0.001             |0.0003            |lr
+0.3               |0.5               |dropout
+0                 |10                |unfrozen_layers
+
+Epoch 1/8
+22/22 - 21s - 945ms/step - accuracy: 0.5595 - auc: 0.5739 - loss: 0.8151 - precision: 0.6027 - recall: 0.5931 - val_accuracy: 0.5616 - val_auc: 0.5846 - val_loss: 0.7513 - val_precision: 0.5691 - val_recall: 0.8642
+Epoch 2/8
+22/22 - 11s - 511ms/step - accuracy: 0.6256 - auc: 0.6733 - loss: 0.6819 - precision: 0.6372 - recall: 0.7473 - val_accuracy: 0.6027 - val_auc: 0.6611 - val_loss: 0.6500 - val_precision: 0.6292 - val_recall: 0.6914
+Epoch 3/8
+22/22 - 11s - 514ms/step - accuracy: 0.6593 - auc: 0.7114 - loss: 0.6496 - precision: 0.6967 - recall: 0.6782 - val_accuracy: 0.6027 - val_auc: 0.7057 - val_loss: 0.6467 - val_precision: 0.5966 - val_recall: 0.8765
+Epoch 4/8
+22/22 - 11s - 512ms/step - accuracy: 0.6975 - auc: 0.7582 - loss: 0.5868 - precision: 0.7191 - recall: 0.7420 - val_accuracy: 0.6507 - val_auc: 0.7417 - val_loss: 0.5818 - val_precision: 0.6630 - val_recall: 0.7531
+Epoch 5/8
+22/22 - 13s - 603ms/step - accuracy: 0.7137 - auc: 0.7848 - loss: 0.5593 - precision: 0.7280 - recall: 0.7686 - val_accuracy: 0.6781 - val_auc: 0.7675 - val_loss: 0.5615 - val_precision: 0.7073 - val_recall: 0.7160
+Epoch 6/8
+22/22 - 14s - 651ms/step - accuracy: 0.7151 - auc: 0.8119 - loss: 0.5230 - precision: 0.7358 - recall: 0.7553 - val_accuracy: 0.6986 - val_auc: 0.7834 - val_loss: 0.5473 - val_precision: 0.7079 - val_recall: 0.7778
+Epoch 7/8
+22/22 - 13s - 606ms/step - accuracy: 0.7342 - auc: 0.8005 - loss: 0.5447 - precision: 0.7444 - recall: 0.7899 - val_accuracy: 0.7192 - val_auc: 0.8036 - val_loss: 0.5306 - val_precision: 0.7439 - val_recall: 0.7531
+Epoch 8/8
+22/22 - 11s - 494ms/step - accuracy: 0.7562 - auc: 0.8462 - loss: 0.4844 - precision: 0.7524 - recall: 0.8324 - val_accuracy: 0.7260 - val_auc: 0.8071 - val_loss: 0.5273 - val_precision: 0.7412 - val_recall: 0.7778
+
+Trial 5 Complete [00h 01m 51s]
+val_auc: 0.8071224689483643
+
+Best val_auc So Far: 0.8903133869171143
+Total elapsed time: 00h 09m 59s
+
+Search: Running Trial #6
+
+Value             |Best Value So Far |Hyperparameter
+0.0003            |0.0003            |lr
+0.3               |0.5               |dropout
+40                |10                |unfrozen_layers
+
+Epoch 1/8
+22/22 - 20s - 930ms/step - accuracy: 0.5698 - auc: 0.5750 - loss: 0.8117 - precision: 0.6061 - recall: 0.6303 - val_accuracy: 0.5548 - val_auc: 0.7465 - val_loss: 0.7431 - val_precision: 0.5548 - val_recall: 1.0000
+Epoch 2/8
+22/22 - 12s - 550ms/step - accuracy: 0.5786 - auc: 0.6195 - loss: 0.6648 - precision: 0.5941 - recall: 0.7473 - val_accuracy: 0.7260 - val_auc: 0.8115 - val_loss: 0.5796 - val_precision: 0.7113 - val_recall: 0.8519
+Epoch 3/8
+22/22 - 12s - 542ms/step - accuracy: 0.6858 - auc: 0.7589 - loss: 0.5789 - precision: 0.7045 - recall: 0.7420 - val_accuracy: 0.7397 - val_auc: 0.8454 - val_loss: 0.5147 - val_precision: 0.7172 - val_recall: 0.8765
+Epoch 4/8
+22/22 - 11s - 521ms/step - accuracy: 0.6314 - auc: 0.6839 - loss: 0.6325 - precision: 0.6623 - recall: 0.6782 - val_accuracy: 0.7192 - val_auc: 0.8126 - val_loss: 0.5681 - val_precision: 0.8226 - val_recall: 0.6296
+Epoch 5/8
+22/22 - 12s - 542ms/step - accuracy: 0.7210 - auc: 0.7668 - loss: 0.5534 - precision: 0.7906 - recall: 0.6729 - val_accuracy: 0.7192 - val_auc: 0.8425 - val_loss: 0.5601 - val_precision: 0.6852 - val_recall: 0.9136
+Epoch 6/8
+22/22 - 12s - 546ms/step - accuracy: 0.7856 - auc: 0.8536 - loss: 0.4711 - precision: 0.8267 - recall: 0.7739 - val_accuracy: 0.7808 - val_auc: 0.8500 - val_loss: 0.5579 - val_precision: 0.7692 - val_recall: 0.8642
+
+Trial 6 Complete [00h 01m 22s]
+val_auc: 0.8499525189399719
+
+Best val_auc So Far: 0.8903133869171143
+Total elapsed time: 00h 11m 22s
+
+Search: Running Trial #7
+
+Value             |Best Value So Far |Hyperparameter
+0.0003            |0.0003            |lr
+0.3               |0.5               |dropout
+10                |10                |unfrozen_layers
+
+Epoch 1/8
+22/22 - 19s - 860ms/step - accuracy: 0.5977 - auc: 0.6024 - loss: 0.8072 - precision: 0.6328 - recall: 0.6463 - val_accuracy: 0.7123 - val_auc: 0.7632 - val_loss: 0.5757 - val_precision: 0.7241 - val_recall: 0.7778
+Epoch 2/8
+22/22 - 13s - 601ms/step - accuracy: 0.7592 - auc: 0.8304 - loss: 0.5133 - precision: 0.7804 - recall: 0.7846 - val_accuracy: 0.7397 - val_auc: 0.8326 - val_loss: 0.4995 - val_precision: 0.7867 - val_recall: 0.7284
+Epoch 3/8
+22/22 - 14s - 648ms/step - accuracy: 0.7974 - auc: 0.8915 - loss: 0.4170 - precision: 0.8165 - recall: 0.8165 - val_accuracy: 0.7603 - val_auc: 0.8425 - val_loss: 0.4904 - val_precision: 0.8026 - val_recall: 0.7531
+Epoch 4/8
+22/22 - 14s - 630ms/step - accuracy: 0.8385 - auc: 0.9294 - loss: 0.3507 - precision: 0.8556 - recall: 0.8511 - val_accuracy: 0.7534 - val_auc: 0.8581 - val_loss: 0.4929 - val_precision: 0.7228 - val_recall: 0.9012
+Epoch 5/8
+22/22 - 14s - 637ms/step - accuracy: 0.8311 - auc: 0.9128 - loss: 0.3728 - precision: 0.8443 - recall: 0.8511 - val_accuracy: 0.6781 - val_auc: 0.8475 - val_loss: 0.6216 - val_precision: 0.9048 - val_recall: 0.4691
+Epoch 6/8
+22/22 - 14s - 636ms/step - accuracy: 0.8678 - auc: 0.9413 - loss: 0.3256 - precision: 0.8724 - recall: 0.8910 - val_accuracy: 0.7260 - val_auc: 0.8635 - val_loss: 0.5389 - val_precision: 0.8727 - val_recall: 0.5926
+
+Trial 7 Complete [00h 01m 31s]
+val_auc: 0.8635327816009521
+
+Best val_auc So Far: 0.8903133869171143
+Total elapsed time: 00h 12m 53s
+
+Search: Running Trial #8
+
+Value             |Best Value So Far |Hyperparameter
+0.001             |0.0003            |lr
+0.1               |0.5               |dropout
+20                |10                |unfrozen_layers
+
+Epoch 1/8
+22/22 - 27s - 1s/step - accuracy: 0.4802 - auc: 0.4811 - loss: 1.1928 - precision: 0.5320 - recall: 0.4867 - val_accuracy: 0.5548 - val_auc: 0.4896 - val_loss: 0.6901 - val_precision: 0.5548 - val_recall: 1.0000
+Epoch 2/8
+22/22 - 13s - 578ms/step - accuracy: 0.5301 - auc: 0.5361 - loss: 0.7054 - precision: 0.5633 - recall: 0.6622 - val_accuracy: 0.5548 - val_auc: 0.5045 - val_loss: 0.6873 - val_precision: 0.5548 - val_recall: 1.0000
+Epoch 3/8
+22/22 - 14s - 654ms/step - accuracy: 0.5037 - auc: 0.4800 - loss: 0.7275 - precision: 0.5386 - recall: 0.7048 - val_accuracy: 0.5548 - val_auc: 0.5231 - val_loss: 0.6885 - val_precision: 0.5548 - val_recall: 1.0000
+Epoch 4/8
+22/22 - 12s - 539ms/step - accuracy: 0.5066 - auc: 0.5195 - loss: 0.7104 - precision: 0.5413 - recall: 0.6968 - val_accuracy: 0.5548 - val_auc: 0.5000 - val_loss: 0.6874 - val_precision: 0.5548 - val_recall: 1.0000
+Epoch 5/8
+22/22 - 12s - 527ms/step - accuracy: 0.5169 - auc: 0.4868 - loss: 0.7237 - precision: 0.5508 - recall: 0.6782 - val_accuracy: 0.5548 - val_auc: 0.5000 - val_loss: 0.6888 - val_precision: 0.5548 - val_recall: 1.0000
+
+Trial 8 Complete [00h 01m 23s]
+val_auc: 0.5230768918991089
+
+Best val_auc So Far: 0.8903133869171143
+Total elapsed time: 00h 14m 16s
+
+Search: Running Trial #9
+
+Value             |Best Value So Far |Hyperparameter
+0.0001            |0.0003            |lr
+0.5               |0.5               |dropout
+10                |10                |unfrozen_layers
+
+Epoch 1/8
+22/22 - 20s - 889ms/step - accuracy: 0.5507 - auc: 0.5619 - loss: 0.8147 - precision: 0.5818 - recall: 0.6622 - val_accuracy: 0.6575 - val_auc: 0.7339 - val_loss: 0.6281 - val_precision: 0.8163 - val_recall: 0.4938
+Epoch 2/8
+22/22 - 11s - 499ms/step - accuracy: 0.6828 - auc: 0.7607 - loss: 0.5764 - precision: 0.7198 - recall: 0.6968 - val_accuracy: 0.7397 - val_auc: 0.8021 - val_loss: 0.5470 - val_precision: 0.7722 - val_recall: 0.7531
+Epoch 3/8
+22/22 - 11s - 508ms/step - accuracy: 0.7504 - auc: 0.8377 - loss: 0.4991 - precision: 0.7575 - recall: 0.8059 - val_accuracy: 0.7603 - val_auc: 0.8444 - val_loss: 0.5042 - val_precision: 0.7674 - val_recall: 0.8148
+Epoch 4/8
+22/22 - 11s - 511ms/step - accuracy: 0.7827 - auc: 0.8615 - loss: 0.4630 - precision: 0.7908 - recall: 0.8245 - val_accuracy: 0.7603 - val_auc: 0.8475 - val_loss: 0.5127 - val_precision: 0.8710 - val_recall: 0.6667
+Epoch 5/8
+22/22 - 13s - 596ms/step - accuracy: 0.8120 - auc: 0.8762 - loss: 0.4414 - precision: 0.8464 - recall: 0.8059 - val_accuracy: 0.7671 - val_auc: 0.8538 - val_loss: 0.4829 - val_precision: 0.8052 - val_recall: 0.7654
+Epoch 6/8
+22/22 - 14s - 640ms/step - accuracy: 0.8311 - auc: 0.8983 - loss: 0.4117 - precision: 0.8287 - recall: 0.8750 - val_accuracy: 0.7877 - val_auc: 0.8488 - val_loss: 0.4778 - val_precision: 0.8049 - val_recall: 0.8148
+Epoch 7/8
+22/22 - 14s - 616ms/step - accuracy: 0.8311 - auc: 0.9081 - loss: 0.3829 - precision: 0.8556 - recall: 0.8351 - val_accuracy: 0.7671 - val_auc: 0.8613 - val_loss: 0.4847 - val_precision: 0.7423 - val_recall: 0.8889
+Epoch 8/8
+22/22 - 13s - 602ms/step - accuracy: 0.8370 - auc: 0.9226 - loss: 0.3567 - precision: 0.8515 - recall: 0.8537 - val_accuracy: 0.7945 - val_auc: 0.8795 - val_loss: 0.4398 - val_precision: 0.8228 - val_recall: 0.8025
+
+Trial 9 Complete [00h 01m 51s]
+val_auc: 0.879487156867981
+
+Best val_auc So Far: 0.8903133869171143
+Total elapsed time: 00h 16m 07s
+
+Search: Running Trial #10
+
+Value             |Best Value So Far |Hyperparameter
+0.001             |0.0003            |lr
+0.2               |0.5               |dropout
+40                |10                |unfrozen_layers
+
+Epoch 1/8
+22/22 - 25s - 1s/step - accuracy: 0.5154 - auc: 0.4932 - loss: 1.0071 - precision: 0.5518 - recall: 0.6516 - val_accuracy: 0.4452 - val_auc: 0.5000 - val_loss: 0.6933 - val_precision: 0.0000e+00 - val_recall: 0.0000e+00
+Epoch 2/8
+22/22 - 12s - 554ms/step - accuracy: 0.5154 - auc: 0.5083 - loss: 0.7257 - precision: 0.5581 - recall: 0.5878 - val_accuracy: 0.5548 - val_auc: 0.5075 - val_loss: 0.6876 - val_precision: 0.5548 - val_recall: 1.0000
+Epoch 3/8
+22/22 - 12s - 552ms/step - accuracy: 0.4743 - auc: 0.4631 - loss: 0.7343 - precision: 0.5194 - recall: 0.6410 - val_accuracy: 0.5548 - val_auc: 0.5000 - val_loss: 0.6872 - val_precision: 0.5548 - val_recall: 1.0000
+Epoch 4/8
+22/22 - 12s - 547ms/step - accuracy: 0.5007 - auc: 0.4781 - loss: 0.7271 - precision: 0.5375 - recall: 0.6862 - val_accuracy: 0.5548 - val_auc: 0.5000 - val_loss: 0.6873 - val_precision: 0.5548 - val_recall: 1.0000
+Epoch 5/8
+22/22 - 12s - 546ms/step - accuracy: 0.5140 - auc: 0.4661 - loss: 0.7321 - precision: 0.5468 - recall: 0.6995 - val_accuracy: 0.4452 - val_auc: 0.5000 - val_loss: 0.7003 - val_precision: 0.0000e+00 - val_recall: 0.0000e+00
+Epoch 6/8
+22/22 - 12s - 568ms/step - accuracy: 0.5286 - auc: 0.5062 - loss: 0.7073 - precision: 0.5567 - recall: 0.7181 - val_accuracy: 0.5548 - val_auc: 0.5000 - val_loss: 0.6871 - val_precision: 0.5548 - val_recall: 1.0000
+Epoch 7/8
+22/22 - 13s - 571ms/step - accuracy: 0.5242 - auc: 0.5024 - loss: 0.7085 - precision: 0.5578 - recall: 0.6676 - val_accuracy: 0.5548 - val_auc: 0.5000 - val_loss: 0.6880 - val_precision: 0.5548 - val_recall: 1.0000
+Epoch 8/8
+22/22 - 13s - 599ms/step - accuracy: 0.5037 - auc: 0.4805 - loss: 0.7105 - precision: 0.5371 - recall: 0.7314 - val_accuracy: 0.5548 - val_auc: 0.5000 - val_loss: 0.6883 - val_precision: 0.5548 - val_recall: 1.0000
+2026/11/08 14:16:30 INFO mlflow.tracking.fluent: Experiment with name 'VisionGuard-tuning' does not exist. Creating a new experiment.
+
+Trial 10 Complete [00h 01m 56s]
+val_auc: 0.5075023770332336
+
+Best val_auc So Far: 0.8903133869171143
+Total elapsed time: 00h 18m 03s
+trial      lr  dropout  unfrozen_layers  val_auc  best_epoch
+   01 0.00030      0.5               10   0.8903           8
+   08 0.00010      0.5               10   0.8795           8
+   00 0.00010      0.1               10   0.8706           8
+   03 0.00003      0.1               40   0.8695           8
+   06 0.00030      0.3               10   0.8635           6
+   05 0.00030      0.3               40   0.8500           6
+   04 0.00100      0.3                0   0.8071           8
+   02 0.00100      0.5               20   0.6387           3
+   07 0.00100      0.1               20   0.5231           3
+   09 0.00100      0.2               40   0.5075           2
+
+mean val_auc spread per hyperparameter (bigger = mattered more): {'lr': 0.25595, 'dropout': 0.3327, 'unfrozen_layers': 0.295075}
+BEST: {'lr': 0.0003, 'dropout': 0.5, 'unfrozen_layers': 10}

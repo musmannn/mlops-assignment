@@ -1,0 +1,25 @@
+{
+  "model_name": "24L-0672_A2_Ops_visionguard",
+  "model_version": "2",
+  "run_id": "07167af4ef2a4a0996c694409b43ff76",
+  "run_name": "mnv2_224_noaug",
+  "img_size": 224,
+  "threshold": 0.6370762586593628,
+  "threshold_rule": "max recall s.t. FPR<=0.1",
+  "labels": {
+    "0": "real",
+    "1": "ai"
+  },
+  "test_metrics": {
+    "accuracy": 0.7891,
+    "precision": 0.8378,
+    "recall": 0.7654,
+    "f1": 0.8,
+    "roc_auc": 0.8661,
+    "real_called_fake": 12.0,
+    "fake_called_real": 19.0,
+    "tp": 62.0,
+    "tn": 54.0
+  },
+  "registry_alias": "champion"
+}

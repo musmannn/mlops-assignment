@@ -24,3 +24,5 @@ tuner_dir/
 instance/
 *.sqlite3
 *.db
+/deploy/vercel/.build/
+*.onnx

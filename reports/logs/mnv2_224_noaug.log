@@ -1,0 +1,82 @@
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1794133032.617413  185763 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1794133044.647291  185763 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+/home/usman/Downloads/mlops-assign/24L-0672_A2_Ops/.venv/lib/python3.11/site-packages/keras/src/trainers/epoch_iterator.py:74: UserWarning: `shuffle=True` was passed, but will be ignored since the data `x` was provided as a tf.data.Dataset. The Dataset is expected to already be shuffled (via `.shuffle(buffer_size)`).
+  self.data_adapter = data_adapters.get_data_adapter(
+Epoch 1/20
+22/22 - 54s - 2s/step - accuracy: 0.5301 - auc: 0.5167 - loss: 0.8274 - precision: 0.5697 - recall: 0.6090 - val_accuracy: 0.5548 - val_auc: 0.6398 - val_loss: 0.6644 - val_precision: 0.6176 - val_recall: 0.5185 - learning_rate: 0.0010
+Epoch 2/20
+22/22 - 19s - 850ms/step - accuracy: 0.6579 - auc: 0.7006 - loss: 0.6392 - precision: 0.6731 - recall: 0.7394 - val_accuracy: 0.6507 - val_auc: 0.7244 - val_loss: 0.6024 - val_precision: 0.7027 - val_recall: 0.6420 - learning_rate: 0.0010
+Epoch 3/20
+22/22 - 20s - 907ms/step - accuracy: 0.6843 - auc: 0.7489 - loss: 0.5974 - precision: 0.7007 - recall: 0.7473 - val_accuracy: 0.6781 - val_auc: 0.7627 - val_loss: 0.5691 - val_precision: 0.7237 - val_recall: 0.6790 - learning_rate: 0.0010
+Epoch 4/20
+22/22 - 20s - 893ms/step - accuracy: 0.7107 - auc: 0.7879 - loss: 0.5494 - precision: 0.7221 - recall: 0.7739 - val_accuracy: 0.6918 - val_auc: 0.7938 - val_loss: 0.5429 - val_precision: 0.7250 - val_recall: 0.7160 - learning_rate: 0.0010
+Epoch 5/20
+22/22 - 22s - 992ms/step - accuracy: 0.7489 - auc: 0.8180 - loss: 0.5218 - precision: 0.7608 - recall: 0.7952 - val_accuracy: 0.7123 - val_auc: 0.8065 - val_loss: 0.5263 - val_precision: 0.7241 - val_recall: 0.7778 - learning_rate: 0.0010
+Epoch 6/20
+22/22 - 23s - 1s/step - accuracy: 0.7812 - auc: 0.8496 - loss: 0.4833 - precision: 0.7888 - recall: 0.8245 - val_accuracy: 0.7192 - val_auc: 0.8190 - val_loss: 0.5149 - val_precision: 0.7500 - val_recall: 0.7407 - learning_rate: 0.0010
+Epoch 7/20
+22/22 - 22s - 995ms/step - accuracy: 0.7768 - auc: 0.8605 - loss: 0.4665 - precision: 0.7887 - recall: 0.8138 - val_accuracy: 0.7329 - val_auc: 0.8311 - val_loss: 0.5046 - val_precision: 0.7561 - val_recall: 0.7654 - learning_rate: 0.0010
+Epoch 8/20
+22/22 - 20s - 916ms/step - accuracy: 0.7930 - auc: 0.8834 - loss: 0.4335 - precision: 0.7901 - recall: 0.8511 - val_accuracy: 0.7534 - val_auc: 0.8330 - val_loss: 0.5065 - val_precision: 0.8169 - val_recall: 0.7160 - learning_rate: 0.0010
+Epoch 9/20
+22/22 - 22s - 1s/step - accuracy: 0.8120 - auc: 0.8989 - loss: 0.4078 - precision: 0.8147 - recall: 0.8537 - val_accuracy: 0.7397 - val_auc: 0.8354 - val_loss: 0.4951 - val_precision: 0.7654 - val_recall: 0.7654 - learning_rate: 0.0010
+Epoch 10/20
+22/22 - 24s - 1s/step - accuracy: 0.8253 - auc: 0.8967 - loss: 0.4116 - precision: 0.8253 - recall: 0.8670 - val_accuracy: 0.7466 - val_auc: 0.8361 - val_loss: 0.4985 - val_precision: 0.8056 - val_recall: 0.7160 - learning_rate: 0.0010
+Epoch 11/20
+22/22 - 21s - 941ms/step - accuracy: 0.8003 - auc: 0.8840 - loss: 0.4269 - precision: 0.8191 - recall: 0.8191 - val_accuracy: 0.7466 - val_auc: 0.8395 - val_loss: 0.4883 - val_precision: 0.7750 - val_recall: 0.7654 - learning_rate: 0.0010
+Epoch 12/20
+22/22 - 20s - 902ms/step - accuracy: 0.8297 - auc: 0.9114 - loss: 0.3875 - precision: 0.8439 - recall: 0.8484 - val_accuracy: 0.7397 - val_auc: 0.8396 - val_loss: 0.4886 - val_precision: 0.7590 - val_recall: 0.7778 - learning_rate: 0.0010
+Epoch 13/20
+22/22 - 22s - 998ms/step - accuracy: 0.8488 - auc: 0.9284 - loss: 0.3592 - precision: 0.8509 - recall: 0.8803 - val_accuracy: 0.7603 - val_auc: 0.8430 - val_loss: 0.4850 - val_precision: 0.8108 - val_recall: 0.7407 - learning_rate: 0.0010
+Epoch 14/20
+22/22 - 19s - 863ms/step - accuracy: 0.8370 - auc: 0.9126 - loss: 0.3808 - precision: 0.8515 - recall: 0.8537 - val_accuracy: 0.7603 - val_auc: 0.8431 - val_loss: 0.4879 - val_precision: 0.8108 - val_recall: 0.7407 - learning_rate: 0.0010
+Epoch 15/20
+22/22 - 20s - 910ms/step - accuracy: 0.8561 - auc: 0.9268 - loss: 0.3566 - precision: 0.8737 - recall: 0.8644 - val_accuracy: 0.7534 - val_auc: 0.8443 - val_loss: 0.4788 - val_precision: 0.7922 - val_recall: 0.7531 - learning_rate: 0.0010
+Epoch 16/20
+22/22 - 19s - 861ms/step - accuracy: 0.8429 - auc: 0.9264 - loss: 0.3532 - precision: 0.8494 - recall: 0.8697 - val_accuracy: 0.7534 - val_auc: 0.8493 - val_loss: 0.4789 - val_precision: 0.8000 - val_recall: 0.7407 - learning_rate: 0.0010
+Epoch 17/20
+22/22 - 19s - 867ms/step - accuracy: 0.8576 - auc: 0.9322 - loss: 0.3452 - precision: 0.8661 - recall: 0.8777 - val_accuracy: 0.7671 - val_auc: 0.8523 - val_loss: 0.4722 - val_precision: 0.8052 - val_recall: 0.7654 - learning_rate: 0.0010
+Epoch 18/20
+22/22 - 18s - 833ms/step - accuracy: 0.8649 - auc: 0.9457 - loss: 0.3233 - precision: 0.8737 - recall: 0.8830 - val_accuracy: 0.7877 - val_auc: 0.8485 - val_loss: 0.4870 - val_precision: 0.8676 - val_recall: 0.7284 - learning_rate: 0.0010
+Epoch 19/20
+22/22 - 19s - 843ms/step - accuracy: 0.8532 - auc: 0.9346 - loss: 0.3372 - precision: 0.8538 - recall: 0.8856 - val_accuracy: 0.7808 - val_auc: 0.8500 - val_loss: 0.4874 - val_precision: 0.8551 - val_recall: 0.7284 - learning_rate: 0.0010
+Epoch 20/20
+
+Epoch 20: ReduceLROnPlateau reducing learning rate to 0.0003000000142492354.
+22/22 - 18s - 828ms/step - accuracy: 0.8561 - auc: 0.9387 - loss: 0.3299 - precision: 0.8737 - recall: 0.8644 - val_accuracy: 0.7740 - val_auc: 0.8462 - val_loss: 0.4890 - val_precision: 0.8429 - val_recall: 0.7284 - learning_rate: 0.0010
+Restoring model weights from the end of the best epoch: 17.
+Epoch 1/12
+22/22 - 36s - 2s/step - accuracy: 0.8488 - auc: 0.9300 - loss: 0.3488 - precision: 0.8564 - recall: 0.8723 - val_accuracy: 0.7740 - val_auc: 0.8527 - val_loss: 0.4821 - val_precision: 0.8529 - val_recall: 0.7160 - learning_rate: 1.0000e-05
+Epoch 2/12
+22/22 - 27s - 1s/step - accuracy: 0.8678 - auc: 0.9460 - loss: 0.3171 - precision: 0.9017 - recall: 0.8537 - val_accuracy: 0.7671 - val_auc: 0.8563 - val_loss: 0.4642 - val_precision: 0.7975 - val_recall: 0.7778 - learning_rate: 1.0000e-05
+Epoch 3/12
+22/22 - 26s - 1s/step - accuracy: 0.8693 - auc: 0.9458 - loss: 0.3118 - precision: 0.8670 - recall: 0.9016 - val_accuracy: 0.7808 - val_auc: 0.8593 - val_loss: 0.4707 - val_precision: 0.8551 - val_recall: 0.7284 - learning_rate: 1.0000e-05
+Epoch 4/12
+22/22 - 26s - 1s/step - accuracy: 0.8781 - auc: 0.9595 - loss: 0.2817 - precision: 0.8728 - recall: 0.9122 - val_accuracy: 0.8082 - val_auc: 0.8600 - val_loss: 0.4818 - val_precision: 0.9077 - val_recall: 0.7284 - learning_rate: 1.0000e-05
+Epoch 5/12
+22/22 - 25s - 1s/step - accuracy: 0.8869 - auc: 0.9612 - loss: 0.2744 - precision: 0.8966 - recall: 0.8989 - val_accuracy: 0.7808 - val_auc: 0.8634 - val_loss: 0.4619 - val_precision: 0.8356 - val_recall: 0.7531 - learning_rate: 1.0000e-05
+Epoch 6/12
+22/22 - 20s - 918ms/step - accuracy: 0.8928 - auc: 0.9630 - loss: 0.2634 - precision: 0.8915 - recall: 0.9176 - val_accuracy: 0.8082 - val_auc: 0.8644 - val_loss: 0.4682 - val_precision: 0.8955 - val_recall: 0.7407 - learning_rate: 1.0000e-05
+Epoch 7/12
+22/22 - 24s - 1s/step - accuracy: 0.8884 - auc: 0.9617 - loss: 0.2661 - precision: 0.8947 - recall: 0.9043 - val_accuracy: 0.7808 - val_auc: 0.8645 - val_loss: 0.4535 - val_precision: 0.8182 - val_recall: 0.7778 - learning_rate: 1.0000e-05
+Epoch 8/12
+22/22 - 22s - 1s/step - accuracy: 0.9104 - auc: 0.9762 - loss: 0.2295 - precision: 0.9134 - recall: 0.9255 - val_accuracy: 0.7945 - val_auc: 0.8641 - val_loss: 0.4798 - val_precision: 0.8923 - val_recall: 0.7160 - learning_rate: 1.0000e-05
+Epoch 9/12
+22/22 - 24s - 1s/step - accuracy: 0.9163 - auc: 0.9780 - loss: 0.2243 - precision: 0.9208 - recall: 0.9282 - val_accuracy: 0.8082 - val_auc: 0.8661 - val_loss: 0.4750 - val_precision: 0.9077 - val_recall: 0.7284 - learning_rate: 1.0000e-05
+Epoch 10/12
+22/22 - 27s - 1s/step - accuracy: 0.9280 - auc: 0.9806 - loss: 0.2117 - precision: 0.9407 - recall: 0.9282 - val_accuracy: 0.8082 - val_auc: 0.8693 - val_loss: 0.4528 - val_precision: 0.8533 - val_recall: 0.7901 - learning_rate: 1.0000e-05
+Epoch 11/12
+22/22 - 25s - 1s/step - accuracy: 0.9295 - auc: 0.9812 - loss: 0.2132 - precision: 0.9162 - recall: 0.9601 - val_accuracy: 0.7945 - val_auc: 0.8669 - val_loss: 0.4897 - val_precision: 0.9048 - val_recall: 0.7037 - learning_rate: 1.0000e-05
+Epoch 12/12
+22/22 - 27s - 1s/step - accuracy: 0.9515 - auc: 0.9877 - loss: 0.1864 - precision: 0.9573 - recall: 0.9548 - val_accuracy: 0.8082 - val_auc: 0.8678 - val_loss: 0.4744 - val_precision: 0.8955 - val_recall: 0.7407 - learning_rate: 1.0000e-05
+Restoring model weights from the end of the best epoch: 10.
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 2s/step[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m2s[0m 2s/step
+2026/11/08 15:32:03 WARNING mlflow.utils.environment: Failed to resolve installed pip version. ``pip`` will be added to conda.yaml environment spec without a version specifier.
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 2s/step[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m2s[0m 2s/step
+
+run mnv2_224_noaug (07167af4ef2a4a0996c694409b43ff76) best_epoch=30 threshold=0.637
+TEST: {'accuracy': 0.7891, 'precision': 0.8378, 'recall': 0.7654, 'f1': 0.8, 'roc_auc': 0.8661, 'real_called_fake': 12.0, 'fake_called_real': 19.0, 'tp': 62.0, 'tn': 54.0}
+🏃 View run mnv2_224_noaug at: https://dagshub.com/musmannn/mlops-assignment.mlflow/#/experiments/2/runs/07167af4ef2a4a0996c694409b43ff76
+🧪 View experiment at: https://dagshub.com/musmannn/mlops-assignment.mlflow/#/experiments/2

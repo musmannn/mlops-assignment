@@ -116,9 +116,10 @@ def create_app(overrides: dict | None = None, backend=None) -> Flask:
         info = backend.info()
         db_ok = db.ping(engine)
         ok = db_ok and info.get("model_loaded", False)
-        body = {"status": "ok" if ok else "degraded", "database": "ok" if db_ok else "down",
+        # backend info first, so this app's own fields (status, upload limit) win over the API's
+        body = {**info, "status": "ok" if ok else "degraded", "database": "ok" if db_ok else "down",
                 "time": datetime.now(UTC).isoformat(), "debug": app.debug,
-                "max_upload_mb": app.config["MAX_UPLOAD_MB"], **info}
+                "max_upload_mb": app.config["MAX_UPLOAD_MB"]}
         return jsonify(body), 200 if ok else 503
 
     # ---------- friendly error pages ----------

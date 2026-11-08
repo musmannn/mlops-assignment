@@ -8,8 +8,8 @@ Prerequisites (you do these once, by hand):
 Run:
   python deploy/hf_space/deploy.py --user <hf-username>
 
-Then on the Space page: Settings -> Variables and secrets -> New secret
-  MODEL_API_KEY = <same value as MODEL_API_KEY in your .env>
+The script also stores MODEL_API_KEY from .env as a Space secret
+(visible in the Space under Settings -> Variables and secrets, value hidden).
 """
 
 from __future__ import annotations
@@ -55,6 +55,10 @@ def main() -> None:
     repo_id = f"{args.user}/{SPACE}"
     api = HfApi(token=token)
     api.create_repo(repo_id, repo_type="space", space_sdk="docker", exist_ok=True)
+    # The API key becomes a Space *secret* (env var inside the container), never a file in the repo.
+    api_key = os.environ.get("MODEL_API_KEY")
+    assert api_key, "MODEL_API_KEY missing from .env"
+    api.add_space_secret(repo_id, "MODEL_API_KEY", api_key)
     with tempfile.TemporaryDirectory() as tmp:
         build_context(Path(tmp))
         api.upload_folder(folder_path=tmp, repo_id=repo_id, repo_type="space",
