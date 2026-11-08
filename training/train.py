@@ -29,7 +29,7 @@ import numpy as np
 import pandas as pd
 
 from training import metrics as M
-from training.common import ROOT, dvc_data_version, git_commit, load_dotenv, load_params, set_seeds
+from training.common import ROOT, dvc_data_version, git_commit, hardware, load_dotenv, load_params, set_seeds
 from training.models import (
     build_baseline_cnn,
     build_transfer,
@@ -140,6 +140,7 @@ def main() -> None:
             "model_type": args.model,
             "tracking_mode": args.tracking,
             "note": args.note,
+            "hardware": hardware(),
         })
         hp = {
             "model": args.model, "backbone": args.backbone if args.model == "transfer" else "none",

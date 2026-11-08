@@ -5,10 +5,13 @@
 #
 #   bash training/run_experiments.sh            # all runs
 #   bash training/run_experiments.sh mnv2_160   # one run by name
+#   RUN_PREFIX=colab_ bash training/run_experiments.sh   # e.g. on Colab: runs named colab_mnv2_224, ...
+#   EXTRA_ARGS="--epochs 30" bash training/run_experiments.sh   # extra flags for every run
 set -uo pipefail
 cd "$(dirname "$0")/.."
-PY=.venv/bin/python
-COMMON="--epochs 20 --fine-tune-epochs 12"
+PY="${PY:-.venv/bin/python}"
+COMMON="--epochs 20 --fine-tune-epochs 12 ${EXTRA_ARGS:-}"
+PREFIX="${RUN_PREFIX:-}"
 mkdir -p reports/logs
 
 declare -A RUNS=(
@@ -26,7 +29,8 @@ ORDER=(mnv2_224 cnn_baseline cnn_autolog mnv2_224_frozen mnv2_224_noaug mnv2_224
 [[ $# -gt 0 ]] && ORDER=("$@")
 
 for name in "${ORDER[@]}"; do
-  echo "=== $(date +%H:%M:%S) start $name"
-  $PY -m training.train ${RUNS[$name]} $COMMON --run-name "$name" > "reports/logs/$name.log" 2>&1
-  echo "=== $(date +%H:%M:%S) end $name exit=$? :: $(grep -E '^TEST:' "reports/logs/$name.log")"
+  run="${PREFIX}${name}"
+  echo "=== $(date +%H:%M:%S) start $run"
+  $PY -m training.train ${RUNS[$name]} $COMMON --run-name "$run" > "reports/logs/$run.log" 2>&1
+  echo "=== $(date +%H:%M:%S) end $run exit=$? :: $(grep -E '^TEST:' "reports/logs/$run.log")"
 done

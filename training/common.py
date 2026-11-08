@@ -54,6 +54,16 @@ def dvc_data_version() -> str:
     return meta["outs"][0].get("md5", "unknown")
 
 
+def hardware() -> str:
+    """'gpu:<name>' or 'cpu', logged as a tag so Colab-GPU and local-CPU runs are distinguishable."""
+    import tensorflow as tf
+
+    gpus = tf.config.list_physical_devices("GPU")
+    if not gpus:
+        return "cpu"
+    return "gpu:" + tf.config.experimental.get_device_details(gpus[0]).get("device_name", "unknown")
+
+
 def sha256_file(path: Path, chunk: int = 1 << 20) -> str:
     h = hashlib.sha256()
     with open(path, "rb") as f:
